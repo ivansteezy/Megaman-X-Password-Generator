@@ -20,7 +20,14 @@ namespace MegamanXPasswordGenerator
         public MainWindow()
         {
             InitializeComponent();
-            //testing
+
+            FeedData();
+        }
+
+        public IEnumerable<CheckBox> FeedData()
+        {
+            IEnumerable<CheckBox> colection = entireData.Children.OfType<CheckBox>();
+            return colection;
         }
     }
 }
