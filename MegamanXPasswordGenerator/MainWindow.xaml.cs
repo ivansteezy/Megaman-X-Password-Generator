@@ -24,10 +24,33 @@ namespace MegamanXPasswordGenerator
             FeedData();
         }
 
-        public IEnumerable<CheckBox> FeedData()
+        public List<CheckBox> FeedData()
         {
-            IEnumerable<CheckBox> colection = entireData.Children.OfType<CheckBox>();
-            return colection;
+            List<CheckBox> collection = new List<CheckBox>();
+            collection.Add(armadilloIsDefeated);
+            collection.Add(armadilloEtank);
+            collection.Add(armadilloHeartTank);
+            collection.Add(octopusIsDefeated);
+            collection.Add(octopusHeartTank);
+            collection.Add(penguinIsDefeated);
+            collection.Add(penguinHeartTank);
+            collection.Add(pantsArmour);
+            collection.Add(mammothIsDefeated);
+            collection.Add(mammothHeartTank);
+            collection.Add(mammothEtank);
+            collection.Add(chargeArmour);
+            collection.Add(eagleIsDefeated);
+            collection.Add(eagleHeartTank);
+            collection.Add(eagleETank);
+            collection.Add(mandrillIsDefeated);
+            collection.Add(mandrillHeartTank);
+            collection.Add(chameleonIsDefeated);
+            collection.Add(chameleonHeartTank);
+            collection.Add(chameleonBodyArmour);
+            collection.Add(boomerDefeated);
+            collection.Add(boomerHeartTank);
+
+            return collection;
         }
     }
 }
