@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MegamanXPasswordGenerator.source;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,34 +17,7 @@ using System.Windows.Shapes;
 
 namespace MegamanXPasswordGenerator
 {
-    [Flags]
-    public enum MainFactors
-    {
-        ChillPenguin                = 0x000001,
-        ChillPenguinHeartTank       = 0x000002,
-        ChillPenguinEtank           = 0x000004,
-        ArmourLeg                   = 0x000008,
-        SparkMandrill               = 0x000010,
-        SparkMandrillHeartTank      = 0x000020,
-        ArmoredArmadillo            = 0x000040,
-        ArmoredArmadilloEtank       = 0x000080,
-        ArmoredArmadilloHeartTank   = 0x000100,
-        LaunchOctopus               = 0x000200,
-        LaunchOctopusHeartTank      = 0x000400,
-        BoomerKuwanger              = 0x000800,
-        BoomerKuwangerHeartTank     = 0x001000,
-        StingChameleon              = 0x002000,
-        StingChameleonHeartTank     = 0x004000,
-        BodyArmour                  = 0x008000,
-        StormEagle                  = 0x010000,
-        StormEagleHeartTank         = 0x020000,
-        StormEagleEtank             = 0x040000,
-        HeadArmour                  = 0x080000,
-        FlameMammoth                = 0x100000,
-        FlameMammothHeartTank       = 0x200000,
-        FlameMammothEtank           = 0x400000,
-        ChargeArmour                = 0x800000,
-    }
+    
 
     public partial class MainWindow : Window
     {
@@ -56,12 +31,14 @@ namespace MegamanXPasswordGenerator
 
         public void TestFlags()
         {
-            var factors = MegamanXPasswordGenerator.MainFactors.ArmoredArmadillo | MegamanXPasswordGenerator.MainFactors.ArmoredArmadilloEtank;
+            CriteriaFactory factory = new CriteriaFactory();
+            var flags = factory.GetMainFactors().ElementAt(0);
+            var num = CountFlags(flags);                        //Working wuu
+        }
 
-            if (factors.HasFlag(MegamanXPasswordGenerator.MainFactors.ArmoredArmadillo))
-                Console.WriteLine("Has derrotado a armored armadillo");
-            else
-                Console.WriteLine("Has derrotado a armored armadillo");
+        public static int CountFlags(Factors factors)
+        {
+            return new BitArray(new[] { (int)factors }).OfType<bool>().Count(x => x);
         }
 
         public List<CheckBox> FeedData()
@@ -94,31 +71,9 @@ namespace MegamanXPasswordGenerator
         }
     }
 
-    public class Pair<T, U>
+
+    public class CreatePasswordSlot
     {
-        public Pair() { }
-
-        public Pair(T first, U second)
-        {
-            this.First = first;
-            this.Second = second;
-        }
-
-        public T First  { get; set; }
-        public U Second { get; set; }
-    }
-
-    public class PasswordSlot
-    {
-        PasswordSlot()
-        {
-
-        }
-
-        public Pair<int, int> Position { get; set; }
-        public Pair<int, int> N        { get; set; }
-        public Pair<int, int> X        { get; set; }
-        public Pair<int, int> Y        { get; set; }
-        public Pair<int, int> XY       { get; set; }
+        
     }
 }

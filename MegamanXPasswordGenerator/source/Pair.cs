@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Megaman_X_CodeGenerator.source
+namespace MegamanXPasswordGenerator.source
 {
     class Pair<T, U>
     {
