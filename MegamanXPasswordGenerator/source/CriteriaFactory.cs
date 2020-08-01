@@ -110,20 +110,60 @@ namespace MegamanXPasswordGenerator.source
              Factors.LaunchOctopus    | Factors.SparkMandrill  | Factors.StingChameleon | Factors.StormEagle),
 
             //(4, 1)
-            (Factors.None),
+            Factors.None,
 
             //(1, 2)
-            (Factors.ArmoredArmadillo | Factors.BoomerKuwanger | Factors.ChillPenguin)
+            ( Factors.ArmoredArmadillo | Factors.BoomerKuwanger | Factors.ChillPenguin | Factors.FlameMammoth 
+            | Factors.StormEagle | Factors.ArmoredArmadilloHeartTank | Factors.BoomerKuwangerHeartTank 
+            | Factors.ArmoredArmadilloSubTank | Factors.MegaBuster),
+
+            //(2, 2)
+            ( Factors.ArmoredArmadilloSubTank | Factors.FlameMammothSubTank | Factors.SparkMandrillSubTank 
+            | Factors.StormEagleSubTank | Factors.Boots | Factors.Helmet | Factors.Armor | Factors.MegaBuster),
+
+            //(3, 2)
+            ( Factors.LaunchOctopus | Factors.StormEagle | Factors.ChillPenguinHeartTank | Factors.FlameMammothHeartTank 
+            | Factors.StormEagleSubTank | Factors.Helmet),
+
+            //(4, 2)
+            Factors.StingChameleonHeartTank,
+
+            //(1, 3)
+            ( Factors.ChillPenguin | Factors.FlameMammoth | Factors.LaunchOctopusHeartTank | Factors.StingChameleonHeartTank 
+            | Factors.SparkMandrillSubTank | Factors.StormEagleSubTank | Factors.Helmet | Factors.Armor | Factors.MegaBuster),
+
+            //(2, 3)
+            ( Factors.ArmoredArmadilloHeartTank | Factors.BoomerKuwangerHeartTank | Factors.ChillPenguinHeartTank 
+            | Factors.FlameMammothHeartTank | Factors.LaunchOctopusHeartTank | Factors.SparkMandrillHeartTank 
+            | Factors.StingChameleonHeartTank | Factors.StormEagleHeartTank),
+
+            //(3, 3)
+            Factors.None,
+
+            //(4, 3)
+            Factors.None
         };
 
-        List<Criteria> CreatePasswordGrid()
+        public List<Criteria> CreateCriteriaTable()
         {
-            return new List<Criteria>();
-        }
+            var criteriaList = new List<Criteria>();
 
-        public IEnumerable<Factors> GetMainFactors()
-        {
-            return MainFactors;
+            for (var i = 0; i < 12; i++)
+            {
+                var criteria = new Criteria();
+                criteria.Position       = Positions.ElementAt(i);
+                criteria.NCriteriaCode  = NPositionCode.ElementAt(i);
+                criteria.XCriteriaCode  = XPositionCode.ElementAt(i);
+                criteria.YCriteriaCode  = YPositionCode.ElementAt(i);
+                criteria.XYCriteriaCode = XYPositionCode.ElementAt(i);
+                criteria.XFactors       = XFactors.ElementAt(i);
+                criteria.YFactor        = YFactors.ElementAt(i);
+                criteria.MainFactors    = MainFactors.ElementAt(i);
+
+                criteriaList.Add(criteria);
+            }
+
+            return criteriaList;
         }
     }
 }

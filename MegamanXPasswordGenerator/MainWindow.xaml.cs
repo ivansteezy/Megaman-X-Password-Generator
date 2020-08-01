@@ -24,16 +24,13 @@ namespace MegamanXPasswordGenerator
         public MainWindow()
         {
             InitializeComponent();
-
-            //FeedData();
             TestFlags();
         }
 
         public void TestFlags()
         {
             CriteriaFactory factory = new CriteriaFactory();
-            var flags = factory.GetMainFactors().ElementAt(0);
-            var num = CountFlags(flags);                        //Working wuu
+            var table = factory.CreateCriteriaTable();
         }
 
         public static int CountFlags(Factors factors)
