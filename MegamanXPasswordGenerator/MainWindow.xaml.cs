@@ -17,14 +17,13 @@ using System.Windows.Shapes;
 
 namespace MegamanXPasswordGenerator
 {
-    
-
+    // TODO find a way to bind check boxes to an state of Factors Enum
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
-            TestFlags();
         }
 
         public void TestFlags()
@@ -66,11 +65,10 @@ namespace MegamanXPasswordGenerator
 
             return collection;
         }
-    }
 
+        private void Generate(object sender, RoutedEventArgs e)
+        {
 
-    public class CreatePasswordSlot
-    {
-        
+        }
     }
 }

@@ -287,6 +287,10 @@
                 </Grid>
             </Border>
         </Grid>
+
+        <Grid Grid.Row="2">
+            <Button VerticalAlignment="Center" HorizontalAlignment="Center" Click="Generate">Generar</Button>
+        </Grid>
     </Grid>
 </Window>
     

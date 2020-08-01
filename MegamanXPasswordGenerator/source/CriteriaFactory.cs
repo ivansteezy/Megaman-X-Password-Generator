@@ -43,6 +43,28 @@ namespace MegamanXPasswordGenerator.source
     {
         public CriteriaFactory() { }
 
+        public List<Criteria> CreateCriteriaTable()
+        {
+            var criteriaList = new List<Criteria>();
+
+            for (var i = 0; i < 12; i++)
+            {
+                var criteria = new Criteria();
+                criteria.Position       = Positions.ElementAt(i);
+                criteria.NCriteriaCode  = NPositionCode.ElementAt(i);
+                criteria.XCriteriaCode  = XPositionCode.ElementAt(i);
+                criteria.YCriteriaCode  = YPositionCode.ElementAt(i);
+                criteria.XYCriteriaCode = XYPositionCode.ElementAt(i);
+                criteria.XFactors       = XFactors.ElementAt(i);
+                criteria.YFactor        = YFactors.ElementAt(i);
+                criteria.MainFactors    = MainFactors.ElementAt(i);
+
+                criteriaList.Add(criteria);
+            }
+
+            return criteriaList;
+        }
+
         static IEnumerable<Pair<int, int>> Positions = new List<Pair<int, int>>()
         {
             new Pair<int, int>(1, 1), new Pair<int, int>(2, 1), new Pair<int, int>(3, 1), new Pair<int, int>(4, 1),
@@ -92,13 +114,11 @@ namespace MegamanXPasswordGenerator.source
             Factors.Armor,                   Factors.BoomerKuwangerHeartTank,  Factors.MegaBuster,           Factors.StingChameleonHeartTank,
             Factors.ArmoredArmadilloSubTank, Factors.Helmet,                   Factors.FlameMammothSubTank,  Factors.StormEagleHeartTank,
         };
-        
-        //If not exist factors (Factors.None) it count as even amount
-        //List of list of enums or list of enums with all flags | test this if certain position has certain flags
+
         static IEnumerable<Factors> MainFactors = new List<Factors>()
         {
             //(1, 1)
-            ( Factors.ArmoredArmadillo        | Factors.BoomerKuwanger         | Factors.BoomerKuwangerHeartTank 
+            ( Factors.ArmoredArmadillo        | Factors.BoomerKuwanger         | Factors.BoomerKuwangerHeartTank
             | Factors.ChillPenguinHeartTank   | Factors.FlameMammothHeartTank  | Factors.LaunchOctopusHeartTank
             | Factors.StingChameleonHeartTank | Factors.SparkMandrillSubTank   | Factors.Armor),
 
@@ -113,28 +133,28 @@ namespace MegamanXPasswordGenerator.source
             Factors.None,
 
             //(1, 2)
-            ( Factors.ArmoredArmadillo | Factors.BoomerKuwanger | Factors.ChillPenguin | Factors.FlameMammoth 
-            | Factors.StormEagle | Factors.ArmoredArmadilloHeartTank | Factors.BoomerKuwangerHeartTank 
+            ( Factors.ArmoredArmadillo | Factors.BoomerKuwanger | Factors.ChillPenguin | Factors.FlameMammoth
+            | Factors.StormEagle | Factors.ArmoredArmadilloHeartTank | Factors.BoomerKuwangerHeartTank
             | Factors.ArmoredArmadilloSubTank | Factors.MegaBuster),
 
             //(2, 2)
-            ( Factors.ArmoredArmadilloSubTank | Factors.FlameMammothSubTank | Factors.SparkMandrillSubTank 
+            ( Factors.ArmoredArmadilloSubTank | Factors.FlameMammothSubTank | Factors.SparkMandrillSubTank
             | Factors.StormEagleSubTank | Factors.Boots | Factors.Helmet | Factors.Armor | Factors.MegaBuster),
 
             //(3, 2)
-            ( Factors.LaunchOctopus | Factors.StormEagle | Factors.ChillPenguinHeartTank | Factors.FlameMammothHeartTank 
+            ( Factors.LaunchOctopus | Factors.StormEagle | Factors.ChillPenguinHeartTank | Factors.FlameMammothHeartTank
             | Factors.StormEagleSubTank | Factors.Helmet),
 
             //(4, 2)
             Factors.StingChameleonHeartTank,
 
             //(1, 3)
-            ( Factors.ChillPenguin | Factors.FlameMammoth | Factors.LaunchOctopusHeartTank | Factors.StingChameleonHeartTank 
+            ( Factors.ChillPenguin | Factors.FlameMammoth | Factors.LaunchOctopusHeartTank | Factors.StingChameleonHeartTank
             | Factors.SparkMandrillSubTank | Factors.StormEagleSubTank | Factors.Helmet | Factors.Armor | Factors.MegaBuster),
 
             //(2, 3)
-            ( Factors.ArmoredArmadilloHeartTank | Factors.BoomerKuwangerHeartTank | Factors.ChillPenguinHeartTank 
-            | Factors.FlameMammothHeartTank | Factors.LaunchOctopusHeartTank | Factors.SparkMandrillHeartTank 
+            ( Factors.ArmoredArmadilloHeartTank | Factors.BoomerKuwangerHeartTank | Factors.ChillPenguinHeartTank
+            | Factors.FlameMammothHeartTank | Factors.LaunchOctopusHeartTank | Factors.SparkMandrillHeartTank
             | Factors.StingChameleonHeartTank | Factors.StormEagleHeartTank),
 
             //(3, 3)
@@ -143,27 +163,5 @@ namespace MegamanXPasswordGenerator.source
             //(4, 3)
             Factors.None
         };
-
-        public List<Criteria> CreateCriteriaTable()
-        {
-            var criteriaList = new List<Criteria>();
-
-            for (var i = 0; i < 12; i++)
-            {
-                var criteria = new Criteria();
-                criteria.Position       = Positions.ElementAt(i);
-                criteria.NCriteriaCode  = NPositionCode.ElementAt(i);
-                criteria.XCriteriaCode  = XPositionCode.ElementAt(i);
-                criteria.YCriteriaCode  = YPositionCode.ElementAt(i);
-                criteria.XYCriteriaCode = XYPositionCode.ElementAt(i);
-                criteria.XFactors       = XFactors.ElementAt(i);
-                criteria.YFactor        = YFactors.ElementAt(i);
-                criteria.MainFactors    = MainFactors.ElementAt(i);
-
-                criteriaList.Add(criteria);
-            }
-
-            return criteriaList;
-        }
     }
 }
