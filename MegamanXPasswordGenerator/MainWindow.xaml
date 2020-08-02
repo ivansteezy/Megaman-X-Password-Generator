@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:MegamanXPasswordGenerator"
         mc:Ignorable="d"
         Title="MainWindow" Height="513" Width="720">
+
     <Grid Margin="10" x:Name="entireData">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -44,9 +45,9 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="armadilloIsDefeated">Defeated</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="armadilloHeartTank">Heart-tank</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="armadilloEtank">E-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="ArmoredArmadillo" Unchecked="Unchecked" Checked="Checked">Defeated</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="ArmoredArmadilloHeartTank" Unchecked="Unchecked" Checked="Checked">Heart-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="ArmoredArmadilloSubTank" Unchecked="Unchecked" Checked="Checked">E-tank</CheckBox>
 
                     <Image Grid.Column="1" Grid.Row="0" Margin="2" Source="Sprites/armadillo.png"></Image>
                     <Image Grid.Column="1" Grid.Row="1" Margin="5" Source="Sprites/heart-tank.jpg"></Image>
@@ -76,8 +77,8 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="octopusIsDefeated">Defeated</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="octopusHeartTank">Heart-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="LaunchOctopus" Unchecked="Unchecked" Checked="Checked">Defeated</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="LaunchOctopusHeartTank" Unchecked="Unchecked" Checked="Checked">Heart-tank</CheckBox>
 
                     <Image Grid.Column="1" Grid.Row="0" Margin="2" Source="Sprites/octopus.png"></Image>
                     <Image Grid.Column="1" Grid.Row="1" Margin="5" Source="Sprites/heart-tank.jpg"></Image>
@@ -106,9 +107,9 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="penguinIsDefeated">Defeated</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="penguinHeartTank">Heart-tank</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="pantsArmour">Pants</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="ChillPenguin" Unchecked="Unchecked" Checked="Checked">Defeated</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="ChillPenguinHeartTank" Unchecked="Unchecked" Checked="Checked">Heart-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="Boots" Unchecked="Unchecked" Checked="Checked">Boots</CheckBox>
 
                     <Image Grid.Column="1" Grid.Row="0" Margin="2" Source="Sprites/penguin.png"></Image>
                     <Image Grid.Column="1" Grid.Row="1" Margin="5" Source="Sprites/heart-tank.jpg"></Image>
@@ -139,10 +140,10 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="mammothIsDefeated">Defeated</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="mammothHeartTank">Heart-tank</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="mammothEtank">E-tank</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" x:Name="chargeArmour">Charge-shot</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="FlameMammoth" Unchecked="Unchecked" Checked="Checked">Defeated</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="FlameMammothHeartTank" Unchecked="Unchecked" Checked="Checked">Heart-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="FlameMammothSubTank" Unchecked="Unchecked" Checked="Checked">E-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" x:Name="MegaBuster" Unchecked="Unchecked" Checked="Checked">Charge-shot</CheckBox>
 
                     <Image Grid.Column="1" Grid.Row="0" Margin="2" Source="Sprites/mammoth.png"></Image>
                     <Image Grid.Column="1" Grid.Row="1" Margin="5" Source="Sprites/heart-tank.jpg"></Image>
@@ -181,9 +182,9 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="eagleIsDefeated">Defeated</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="eagleHeartTank">Heart-tank</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="eagleETank">E-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="StormEagle" Unchecked="Unchecked" Checked="Checked">Defeated</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="StormEagleHeartTank" Unchecked="Unchecked" Checked="Checked">Heart-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="StormEagleSubTank" Unchecked="Unchecked" Checked="Checked">E-tank</CheckBox>
 
                     <Image Grid.Column="1" Grid.Row="0" Margin="2" Source="Sprites/eagle.png"></Image>
                     <Image Grid.Column="1" Grid.Row="1" Margin="5" Source="Sprites/heart-tank.jpg"></Image>
@@ -213,10 +214,12 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="mandrillIsDefeated">Defeated</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="mandrillHeartTank">Heart-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="SparkMandrill" Unchecked="Unchecked" Checked="Checked">Defeated</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="SparkMandrillHeartTank" Unchecked="Unchecked" Checked="Checked">Heart-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="SparkMandrillSubTank" Unchecked="Unchecked" Checked="Checked">E-tank</CheckBox>
 
                     <Image Grid.Column="1" Grid.Row="0" Margin="2" Source="Sprites/mandrill.png"></Image>
+                    <Image Grid.Column="1" Grid.Row="1" Margin="5" Source="Sprites/heart-tank.jpg"></Image>
                     <Image Grid.Column="1" Grid.Row="1" Margin="5" Source="Sprites/heart-tank.jpg"></Image>
                 </Grid>
             </Grid>
@@ -243,9 +246,9 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="chameleonIsDefeated">Defeated</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="chameleonHeartTank">Heart-tank</CheckBox>
-                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="chameleonBodyArmour">Body Armour</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="StingChameleon" Unchecked="Unchecked" Checked="Checked">Defeated</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="StingChameleonHeartTank" Unchecked="Unchecked" Checked="Checked">Heart-tank</CheckBox>
+                    <CheckBox Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" x:Name="Armor" Unchecked="Unchecked" Checked="Checked">Body Armour</CheckBox>
 
                     <Image Grid.Column="1" Grid.Row="0" Margin="2" Source="Sprites/chameleon.png"></Image>
                     <Image Grid.Column="1" Grid.Row="1" Margin="5" Source="Sprites/heart-tank.jpg"></Image>
@@ -276,8 +279,8 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="boomerDefeated">Defeated</CheckBox>
-                        <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="boomerHeartTank">Heart-tank</CheckBox>
+                        <CheckBox Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" x:Name="BoomerKuwanger" Unchecked="Unchecked" Checked="Checked">Defeated</CheckBox>
+                        <CheckBox Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" x:Name="BoomerKuwangerHeartTank" Unchecked="Unchecked" Checked="Checked">Heart-tank</CheckBox>
 
 
                         <Image Grid.Column="1" Grid.Row="0" Margin="2" Source="Sprites/kuwanger.png"></Image>

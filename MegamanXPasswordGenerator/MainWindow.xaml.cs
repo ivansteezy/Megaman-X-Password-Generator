@@ -1,8 +1,11 @@
-﻿using MegamanXPasswordGenerator.source;
+﻿using MegamanXCodeGenerator.source;
+using MegamanXPasswordGenerator.source;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,7 +20,6 @@ using System.Windows.Shapes;
 
 namespace MegamanXPasswordGenerator
 {
-    // TODO find a way to bind check boxes to an state of Factors Enum
     public partial class MainWindow : Window
     {
 
@@ -26,49 +28,27 @@ namespace MegamanXPasswordGenerator
             InitializeComponent();
         }
 
-        public void TestFlags()
-        {
-            CriteriaFactory factory = new CriteriaFactory();
-            var table = factory.CreateCriteriaTable();
-        }
-
-        public static int CountFlags(Factors factors)
-        {
-            return new BitArray(new[] { (int)factors }).OfType<bool>().Count(x => x);
-        }
-
-        public List<CheckBox> FeedData()
-        {
-            List<CheckBox> collection = new List<CheckBox>();
-            collection.Add(armadilloIsDefeated);
-            collection.Add(armadilloEtank);
-            collection.Add(armadilloHeartTank);
-            collection.Add(octopusIsDefeated);
-            collection.Add(octopusHeartTank);
-            collection.Add(penguinIsDefeated);
-            collection.Add(penguinHeartTank);
-            collection.Add(pantsArmour);
-            collection.Add(mammothIsDefeated);
-            collection.Add(mammothHeartTank);
-            collection.Add(mammothEtank);
-            collection.Add(chargeArmour);
-            collection.Add(eagleIsDefeated);
-            collection.Add(eagleHeartTank);
-            collection.Add(eagleETank);
-            collection.Add(mandrillIsDefeated);
-            collection.Add(mandrillHeartTank);
-            collection.Add(chameleonIsDefeated);
-            collection.Add(chameleonHeartTank);
-            collection.Add(chameleonBodyArmour);
-            collection.Add(boomerDefeated);
-            collection.Add(boomerHeartTank);
-
-            return collection;
-        }
-
         private void Generate(object sender, RoutedEventArgs e)
         {
-
+            var gen = new PasswordGenerator(m_Factors);
+            gen.GeneratePasswordSlots();
         }
+
+        private void Checked(object sender, RoutedEventArgs e)
+        {
+            var chboxName = ((CheckBox)sender).Name;
+            m_Factors |= (Factors)Enum.Parse(typeof(Factors), chboxName);
+        }
+
+        private void Unchecked(object sender, RoutedEventArgs e)
+        {
+            var chboxName = ((CheckBox)sender).Name;
+            m_Factors &= ~(Factors)Enum.Parse(typeof(Factors), chboxName);
+        }
+
+        public Factors m_Factors { get; set; }
     }
+
+   
+
 }

@@ -39,11 +39,9 @@ namespace MegamanXPasswordGenerator.source
         None                       = 0x2000000
     }
 
-    public class CriteriaFactory
+    static public class CriteriaFactory
     {
-        public CriteriaFactory() { }
-
-        public List<Criteria> CreateCriteriaTable()
+        static public List<Criteria> CreateCriteriaTable()
         {
             var criteriaList = new List<Criteria>();
 
