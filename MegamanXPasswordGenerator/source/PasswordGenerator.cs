@@ -1,12 +1,8 @@
-﻿using MegamanXPasswordGenerator.source;
-using System;
+﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Authentication;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Navigation;
+using MegamanXPasswordGenerator.source;
 
 namespace MegamanXCodeGenerator.source
 {
@@ -17,35 +13,35 @@ namespace MegamanXCodeGenerator.source
             this.currentFactors = currentFactors;
         }
 
-        //return code for each position
         public List<int> GeneratePasswordSlots()
         {
+            var factory = new CriteriaFactory();
             var listOfSlots = new List<int>();
-            var table = CriteriaFactory.CreateCriteriaTable();
+            var table = factory.CreateCriteriaTable();
 
             foreach(var a in table)
             {
                 int slotValue;
                 var evenFactors = IsEvenFactors(a.MainFactors);
-                var hasX = TestXFactor(a.XFactors);
-                var hasY = TestYFactor(a.YFactor);
+                var hasX = currentFactors.HasFlag(a.XFactors);
+                var hasY = currentFactors.HasFlag(a.YFactors);
 
-                if(hasX && hasY) //si tiene ambos
+                if(hasX && hasY)
                 {
                     if (evenFactors) slotValue = a.XYCriteriaCode.First;
                     else             slotValue = a.XYCriteriaCode.Second;
                 }
-                else if(hasX)   //si tiene X
+                else if(hasX)
                 {
                     if (evenFactors) slotValue = a.XCriteriaCode.First;
                     else             slotValue = a.XCriteriaCode.Second;
                 }
-                else if(hasY)  //si tiene Y
+                else if(hasY)
                 {
                     if (evenFactors) slotValue = a.YCriteriaCode.First;
                     else             slotValue = a.YCriteriaCode.Second;
                 }
-                else           //si no tiene ninguno
+                else
                 {
                     if (evenFactors) slotValue = a.NCriteriaCode.First;
                     else             slotValue = a.NCriteriaCode.Second;
@@ -59,24 +55,9 @@ namespace MegamanXCodeGenerator.source
 
         private bool IsEvenFactors(Factors currrentMainFactors)
         {
-            if (((CountFlags(currrentMainFactors) % 2) == 0) || currrentMainFactors.HasFlag(Factors.None))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        private bool TestXFactor(Factors factors)
-        {
-            return false;
-        }
-
-        private bool TestYFactor(Factors factors)
-        {
-            return false;
+            var submask = currrentMainFactors & this.currentFactors;
+            if (((CountFlags(submask) % 2) == 0) || submask.HasFlag(Factors.None)) return true;
+            else                                                                   return false;
         }
 
         private int CountFlags(Factors factors)

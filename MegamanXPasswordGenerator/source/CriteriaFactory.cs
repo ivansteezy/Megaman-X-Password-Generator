@@ -1,10 +1,6 @@
-﻿using MegamanXPasswordGenerator.source;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace MegamanXPasswordGenerator.source
 {
@@ -13,35 +9,34 @@ namespace MegamanXPasswordGenerator.source
     {
         ChillPenguin               = 0x0000001,
         ChillPenguinHeartTank      = 0x0000002,
-        ChillPenguinSubTank        = 0x0000004,
-        Boots                      = 0x0000008,
-        SparkMandrill              = 0x0000010,
-        SparkMandrillHeartTank     = 0x0000020,
-        SparkMandrillSubTank       = 0x0000040,
-        ArmoredArmadillo           = 0x0000080,
-        ArmoredArmadilloSubTank    = 0x0000100,
-        ArmoredArmadilloHeartTank  = 0x0000200,
-        LaunchOctopus              = 0x0000400,
-        LaunchOctopusHeartTank     = 0x0000800,
-        BoomerKuwanger             = 0x0001000,
-        BoomerKuwangerHeartTank    = 0x0002000,
-        StingChameleon             = 0x0004000,
-        StingChameleonHeartTank    = 0x0008000,
-        Armor                      = 0x0010000,
-        StormEagle                 = 0x0020000,
-        StormEagleHeartTank        = 0x0040000,
-        StormEagleSubTank          = 0x0080000,
-        Helmet                     = 0x0100000,
-        FlameMammoth               = 0x0200000,
-        FlameMammothHeartTank      = 0x0400000,
-        FlameMammothSubTank        = 0x0800000,
-        MegaBuster                 = 0x1000000,
-        None                       = 0x2000000
+        Boots                      = 0x0000004,
+        SparkMandrill              = 0x0000008,
+        SparkMandrillHeartTank     = 0x0000010,
+        SparkMandrillSubTank       = 0x0000020,
+        ArmoredArmadillo           = 0x0000040,
+        ArmoredArmadilloSubTank    = 0x0000080,
+        ArmoredArmadilloHeartTank  = 0x0000100,
+        LaunchOctopus              = 0x0000200,
+        LaunchOctopusHeartTank     = 0x0000400,
+        BoomerKuwanger             = 0x0000800,
+        BoomerKuwangerHeartTank    = 0x0001000,
+        StingChameleon             = 0x0002000,
+        StingChameleonHeartTank    = 0x0004000,
+        Armor                      = 0x0008000,
+        StormEagle                 = 0x0010000,
+        StormEagleHeartTank        = 0x0020000,
+        StormEagleSubTank          = 0x0040000,
+        Helmet                     = 0x0080000,
+        FlameMammoth               = 0x0100000,
+        FlameMammothHeartTank      = 0x0200000,
+        FlameMammothSubTank        = 0x0400000,
+        MegaBuster                 = 0x0800000,
+        None                       = 0x1000000
     }
 
-    static public class CriteriaFactory
+    public class CriteriaFactory
     {
-        static public List<Criteria> CreateCriteriaTable()
+        public List<Criteria> CreateCriteriaTable()
         {
             var criteriaList = new List<Criteria>();
 
@@ -54,7 +49,7 @@ namespace MegamanXPasswordGenerator.source
                 criteria.YCriteriaCode  = YPositionCode.ElementAt(i);
                 criteria.XYCriteriaCode = XYPositionCode.ElementAt(i);
                 criteria.XFactors       = XFactors.ElementAt(i);
-                criteria.YFactor        = YFactors.ElementAt(i);
+                criteria.YFactors        = YFactors.ElementAt(i);
                 criteria.MainFactors    = MainFactors.ElementAt(i);
 
                 criteriaList.Add(criteria);
