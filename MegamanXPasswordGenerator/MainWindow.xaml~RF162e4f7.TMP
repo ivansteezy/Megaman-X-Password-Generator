@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         WindowStyle="None"
         Icon="Sprites/icon.ico"
-        Title="Megaman-X code generator" WindowStartupLocation="CenterScreen"  Height="751" Width="814">
+        Title="Megaman-X code generator" WindowStartupLocation="CenterScreen"  Height="715" Width="832">
 
-    <Grid x:Name="mainGrid">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="35*"/>
@@ -342,74 +342,74 @@
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="2" Grid.Row="1" Margin="15 4 15 5">
+                    <Grid Grid.Column="2" Grid.Row="1" Margin="8 4 5 5">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[9]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="3" Grid.Row="1" Margin="15 4 15 5">
+                    <Grid Grid.Column="3" Grid.Row="1" Margin="8 4 5 5">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[10]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="4" Grid.Row="1" Margin="15 4 15 5">
+                    <Grid Grid.Column="4" Grid.Row="1" Margin="8 4 5 5">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[11]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="1" Grid.Row="3" Margin="15 6 15 3">
+                    <Grid Grid.Column="1" Grid.Row="3" Margin="7 7 7 4">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[4]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="2" Grid.Row="3" Margin="15 6 15 3">
+                    <Grid Grid.Column="2" Grid.Row="3" Margin="7 7 7 4">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[5]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="3" Grid.Row="3" Margin="15 6 15 3">
+                    <Grid Grid.Column="3" Grid.Row="3" Margin="7 7 7 4">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[6]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="4" Grid.Row="3" Margin="15 6 15 3">
+                    <Grid Grid.Column="4" Grid.Row="3" Margin="7 7 7 4">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[7]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="1" Grid.Row="5" Margin="15 6 15 3">
+                    <Grid Grid.Column="1" Grid.Row="5" Margin="7 7 7 4">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[0]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="2" Grid.Row="5" Margin="15 6 15 3">
+                    <Grid Grid.Column="2" Grid.Row="5" Margin="7 7 7 4">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[1]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="3" Grid.Row="5" Margin="15 6 15 3">
+                    <Grid Grid.Column="3" Grid.Row="5" Margin="7 7 7 4">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[2]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
 
-                    <Grid Grid.Column="4" Grid.Row="5" Margin="15 6 15 3">
+                    <Grid Grid.Column="4" Grid.Row="5" Margin="7 7 7 4">
                         <Grid.Background>
                             <ImageBrush ImageSource="{Binding Path=m_paths[3]}"></ImageBrush>
                         </Grid.Background>
                     </Grid>
                 </Grid>
-                
-                <Image Grid.Row="1" Cursor="Hand" Source="Sprites/generate-button.png" Width="100" VerticalAlignment="Center" MouseDown="Generate"></Image>
+
+                <Button Grid.Row="2" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Generate">Generate</Button>
             </Grid>
         </Grid>
     </Grid>

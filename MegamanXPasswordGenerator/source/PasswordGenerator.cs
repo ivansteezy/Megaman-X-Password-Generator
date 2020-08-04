@@ -46,7 +46,6 @@ namespace MegamanXCodeGenerator.source
                     if (evenFactors) slotValue = a.NCriteriaCode.First;
                     else             slotValue = a.NCriteriaCode.Second;
                 }
-                Console.Write("En la posicion (" + a.Position.First + ", " + a.Position.Second + ")" + "hay un: " + slotValue + "\n");
                 listOfSlots.Add(slotValue);
             }
 
