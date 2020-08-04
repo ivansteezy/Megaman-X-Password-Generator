@@ -17,9 +17,9 @@ namespace MegamanXCodeGenerator.source
             passwordSlots = genetor.GeneratePasswordSlots();
         }
 
-        public ObservableCollection<String> GenerateGrid()
+        public List<String> GenerateGrid()
         {
-            var paths = new ObservableCollection<String>();
+            var paths = new List<String>();
 
             foreach(var i in passwordSlots)
                 paths.Add(pathsMap[i]);
